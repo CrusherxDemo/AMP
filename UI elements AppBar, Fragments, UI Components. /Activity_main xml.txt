@@ -1,0 +1,165 @@
+ 
+
+<?xml version="1.0" encoding="utf-8"?> 
+
+<LinearLayout 
+
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+
+    xmlns:tools="http://schemas.android.com/tools" 
+
+    android:layout_width="match_parent" 
+
+    android:layout_height="match_parent" 
+
+    android:backgroundTint="@android:color/background_dark" 
+
+    tools:context=".MainActivity"> 
+
+  
+
+    <LinearLayout 
+
+        android:layout_width="match_parent" 
+
+        android:layout_height="match_parent" 
+
+        android:layout_gravity="center" 
+
+        android:background="#E3C1C9" 
+
+        android:orientation="vertical" 
+
+        android:padding="25dp"> 
+
+  
+
+        <TextView 
+
+            android:id="@+id/textView" 
+
+            android:layout_width="match_parent" 
+
+            android:layout_height="wrap_content" 
+
+            android:layout_gravity="center" 
+
+            android:padding="?attr/dialogPreferredPadding" 
+
+            android:text="Login" 
+
+            android:textColor="@color/teal_200" 
+
+            android:textColorHighlight="@color/purple_700" 
+
+            android:textSize="34sp" /> 
+
+  
+
+        <EditText 
+
+            android:id="@+id/et_username" 
+
+            android:layout_width="match_parent" 
+
+            android:layout_height="wrap_content" 
+
+            android:ems="10" 
+
+            android:hint="Username" 
+
+            android:inputType="textPersonName" 
+
+            android:textColor="@android:color/holo_red_dark" 
+
+            android:textSize="20sp" /> 
+
+  
+
+        <EditText 
+
+            android:id="@+id/et_password" 
+
+            android:layout_width="match_parent" 
+
+            android:layout_height="wrap_content" 
+
+            android:ems="10" 
+
+            android:hint="Password" 
+
+            android:inputType="textPersonName" 
+
+            android:textColor="@android:color/holo_red_dark" 
+
+            android:textSize="20sp" /> 
+
+  
+
+        <LinearLayout 
+
+            android:layout_width="match_parent" 
+
+            android:layout_height="match_parent" 
+
+            android:backgroundTint="@android:color/background_dark" 
+
+            android:orientation="horizontal"> 
+
+  
+
+            <Button 
+
+                android:id="@+id/button" 
+
+                android:layout_width="wrap_content" 
+
+                android:layout_height="wrap_content" 
+
+                android:layout_gravity="center" 
+
+                android:layout_weight="1" 
+
+                android:backgroundTint="@color/purple_700" 
+
+                android:text="Reset" 
+
+                android:textColor="@color/teal_200" 
+
+                android:textColorHighlight="@color/black" 
+
+                android:textSize="16sp" /> 
+
+  
+
+            <Button 
+
+                android:id="@+id/button2" 
+
+                android:layout_width="wrap_content" 
+
+                android:layout_height="wrap_content" 
+
+                android:layout_gravity="center" 
+
+                android:layout_weight="1" 
+
+                android:backgroundTint="@color/purple_700" 
+
+                android:text="Submit" 
+
+                android:textColor="@color/teal_200" 
+
+                android:textSize="16sp" /> 
+
+  
+
+        </LinearLayout> 
+
+    </LinearLayout> 
+
+</LinearLayout> 
+
+ 

@@ -1,0 +1,71 @@
+ 
+
+package com.example.myapplication 
+
+  
+
+import androidx.appcompat.app.AppCompatActivity 
+
+import android.os.Bundle 
+
+import android.widget.Button 
+
+import android.widget.EditText 
+
+import android.widget.Toast 
+
+  
+
+class MainActivity : AppCompatActivity() { 
+
+  
+
+    override fun onCreate(savedInstanceState: Bundle?) { 
+
+        super.onCreate(savedInstanceState) 
+
+        setContentView(R.layout.activity_main) 
+
+  
+
+        val et_username = findViewById<EditText>(R.id.et_username) 
+
+        val et_password = findViewById<EditText>(R.id.et_password) 
+
+        val button = findViewById<Button>(R.id.button) 
+
+        val button2 = findViewById<Button>(R.id.button2) 
+
+  
+
+        // Reset Button 
+
+        button.setOnClickListener { 
+
+            et_username.setText("") 
+
+            et_password.setText("") 
+
+        } 
+
+  
+
+        // Submit Button 
+
+        button2.setOnClickListener { 
+
+            val username = et_username.text.toString() 
+
+            val password = et_password.text.toString() 
+
+  
+
+            Toast.makeText(this, "Username: $username", Toast.LENGTH_LONG).show() 
+
+        } 
+
+    } 
+
+} 
+
+ 

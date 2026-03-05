@@ -1,0 +1,15 @@
+ 
+
+package com.example.myapplication 
+
+  
+
+data class GridViewModal( 
+
+    val mobname: String, 
+
+    val mobimg: Int 
+
+) 
+
+ 

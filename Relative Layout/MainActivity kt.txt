@@ -1,0 +1,47 @@
+ 
+
+package com.example.pr5 
+
+import androidx.appcompat.app.AppCompatActivity 
+
+import android.os.Bundle 
+
+import android.view.View 
+
+import android.widget.Button 
+
+import com.example.pr5.R 
+
+import com.google.android.material.snackbar.Snackbar 
+
+  
+
+class MainActivity : AppCompatActivity() { 
+
+    override fun onCreate(savedInstanceState: Bundle?) { 
+
+        super.onCreate(savedInstanceState) 
+
+        setContentView(R.layout.activity_main) 
+
+        val btnNextActivity = findViewById<View>(R.id.button3) as Button 
+
+        btnNextActivity.setOnClickListener { view -> 
+
+            Snackbar.make( 
+
+                view, "Relative Layout Demo", 
+
+                Snackbar.LENGTH_LONG 
+
+            ) 
+
+                .setAction("RelativeLayout", null).show() 
+
+        } 
+
+    } 
+
+} 
+
+ 
