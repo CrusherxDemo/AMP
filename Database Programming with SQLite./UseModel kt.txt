@@ -1,0 +1,17 @@
+ 
+
+package com.example.pract_09 
+
+  
+
+class UserModel( 
+
+    val userid: String, 
+
+    val name: String, 
+
+    val age: String 
+
+) 
+
+ 

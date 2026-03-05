@@ -1,0 +1,99 @@
+ 
+
+package com.example.myapplication 
+
+import android.app.AlertDialog import android.content.pm.PackageManager import android.support.v4.app.ActivityCompat import android.support.v4.content.ContextCompat import android.widget.Toast 
+
+class ManagePermission( private val activity: MainActivity, private val list: List, private val code: Int ) { 
+
+fun checkPermissions() { 
+    if (isPermissionsGranted() != PackageManager.PERMISSION_GRANTED) { 
+        showAlert() 
+    } else { 
+        Toast.makeText( 
+            activity, 
+            "Permissions already Granted", 
+            Toast.LENGTH_SHORT 
+        ).show() 
+    } 
+} 
+ 
+private fun isPermissionsGranted(): Int { 
+    var counter = 0 
+    for (permission in list) { 
+        counter += ContextCompat.checkSelfPermission(activity, permission) 
+    } 
+    return counter 
+} 
+ 
+private fun deniedPermission(): String { 
+    for (permission in list) { 
+        if ( 
+            ContextCompat.checkSelfPermission( 
+                activity, 
+                permission 
+            ) == PackageManager.PERMISSION_DENIED 
+        ) { 
+            return permission 
+        } 
+    } 
+    return "" 
+} 
+ 
+private fun showAlert() { 
+    val builder = AlertDialog.Builder(activity) 
+    builder.setTitle("Need Permission(s)") 
+    builder.setMessage("Some Permissions are required to do the task.") 
+    builder.setPositiveButton("OK") { _, _ -> 
+        requestPermissions() 
+    } 
+    builder.setNeutralButton("Cancel", null) 
+ 
+    val dialog = builder.create() 
+    dialog.show() 
+} 
+ 
+private fun requestPermissions() { 
+    val permission = deniedPermission() 
+ 
+    if ( 
+        ActivityCompat.shouldShowRequestPermissionRationale( 
+            activity, 
+            permission 
+        ) 
+    ) { 
+        Toast.makeText( 
+            activity, 
+            "Should show an Explanation.", 
+            Toast.LENGTH_SHORT 
+        ).show() 
+    } else { 
+        ActivityCompat.requestPermissions( 
+            activity, 
+            list.toTypedArray(), 
+            code 
+        ) 
+    } 
+} 
+ 
+fun processPermissionsResult( 
+    requestCode: Int, 
+    permissions: Array<String>, 
+    grantResults: IntArray 
+): Boolean { 
+ 
+    var result = 0 
+ 
+    if (grantResults.isNotEmpty()) { 
+        for (item in grantResults) { 
+            result += item 
+        } 
+    } 
+ 
+    return result == PackageManager.PERMISSION_GRANTED 
+} 
+  
+
+} 
+
+ 

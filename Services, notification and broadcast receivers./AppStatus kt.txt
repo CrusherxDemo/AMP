@@ -1,0 +1,93 @@
+ 
+
+package com.example.myapplication 
+
+  
+
+import android.annotation.SuppressLint 
+
+import android.content.Context 
+
+import android.net.ConnectivityManager 
+
+import android.net.NetworkInfo 
+
+import android.util.Log 
+
+import java.lang.Exception 
+
+  
+
+class AppStatus { 
+
+  
+
+    internal lateinit var connectivityManager: ConnectivityManager 
+
+    internal var wifiInfo: NetworkInfo? = null 
+
+    internal var mobileInfo: NetworkInfo? = null 
+
+    internal var connected = true 
+
+  
+
+    val isOnLine: Boolean 
+
+        @SuppressLint("MissingPermissions") 
+
+        get() { 
+
+            try { 
+
+                connectivityManager = 
+
+                    context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager 
+
+  
+
+                val networkInfo = connectivityManager.activeNetworkInfo 
+
+                connected = 
+
+                    networkInfo != null && networkInfo.isAvailable && networkInfo.isConnected 
+
+  
+
+                return connected 
+
+            } catch (e: Exception) { 
+
+                println("CheckConnectivity Exception: " + e.message) 
+
+                Log.v("connectivity", e.toString()) 
+
+            } 
+
+            return connected 
+
+        } 
+
+  
+
+    companion object { 
+
+        internal lateinit var context: Context 
+
+        private val instance = AppStatus() 
+
+  
+
+        fun getInstance(ctx: Context): AppStatus { 
+
+            context = ctx.applicationContext 
+
+            return instance 
+
+        } 
+
+    } 
+
+} 
+
+ 

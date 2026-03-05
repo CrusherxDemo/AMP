@@ -1,0 +1,61 @@
+ 
+
+package com.example.myapplication 
+
+  
+
+import android.support.v7.app.AppCompatActivity 
+
+import android.os.Bundle 
+
+import android.support.v7.app.AlertDialog 
+
+import android.widget.Button 
+
+  
+
+class MainActivity : AppCompatActivity() { 
+
+  
+
+    override fun onCreate(savedInstanceState: Bundle?) { 
+
+        super.onCreate(savedInstanceState) 
+
+        setContentView(R.layout.activity_main) 
+
+  
+
+        val button = findViewById(R.id.button) as Button 
+
+  
+
+        button.setOnClickListener { 
+
+            val dialogBuilder = AlertDialog.Builder(this) 
+
+  
+
+            dialogBuilder.setMessage("Do you want to close this application ?") 
+
+                .setCancelable(false) 
+
+                .setPositiveButton("Proceed", { dialog, id -> finish() }) 
+
+                .setNegativeButton("Cancel", { dialog, id -> dialog.cancel() }) 
+
+  
+
+            val alert = dialogBuilder.create() 
+
+            alert.setTitle("AlertDialogExample") 
+
+            alert.show() 
+
+        } 
+
+    } 
+
+} 
+
+ 

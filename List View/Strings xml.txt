@@ -1,0 +1,27 @@
+ 
+
+<resources> 
+
+    <string name="app_name">My Application</string> 
+
+  
+
+    <string-array name="array_technology"> 
+
+        <item>Android</item> 
+
+        <item>JAVA</item> 
+
+        <item>Python</item> 
+
+        <item>C++</item> 
+
+        <item>Ruby</item> 
+
+        <item>.NET</item> 
+
+    </string-array> 
+
+</resources> 
+
+ 
